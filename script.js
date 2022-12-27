@@ -27,13 +27,14 @@ const playRound = () => {
     scissors: "paper",
   };
 
-  console.log(`P ${playerChoice}\nPC ${computerChoice}`)
-
   if (playerChoice === computerChoice) return "even";
 
-  if (beatsTo[playerChoice] === computerChoice) return playerScore++;
-
-  return computerScore++;
+  if (beatsTo[playerChoice] === computerChoice) {
+    playerScore++
+    return "You won the round"
+  };
+  computerScore++
+  return "Computer won the round"
 };
 
 const resetScore = () => {
