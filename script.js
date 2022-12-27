@@ -1,5 +1,5 @@
-let playerScore;
-let computerScore;
+let playerScore = 0;
+let computerScore = 0;
 const choices = ["rock", "paper", "scissors"];
 
 const getRandomNumber = (max) => {
@@ -22,20 +22,36 @@ const playRound = () => {
   const playerChoice = getPlayerChoice();
   const computerChoice = getComputerChoice();
   const beatsTo = {
-    rock:"scissors",
-    paper:"rock",
-    scissors:"paper"
-  }
-  console.log(`Player: ${playerChoice}\nComputer: ${computerChoice}`)
-  if (playerChoice === computerChoice) return "even"
-  if (beatsTo[playerChoice] === computerChoice) {
-    playerScore++
-    return "Player wins"
-  }
-  computerScore++
-  return "Computer wins"
+    rock: "scissors",
+    paper: "rock",
+    scissors: "paper",
+  };
+
+  console.log(`P ${playerChoice}\nPC ${computerChoice}`)
+
+  if (playerChoice === computerChoice) return "even";
+
+  if (beatsTo[playerChoice] === computerChoice) return playerScore++;
+
+  return computerScore++;
 };
 
-const game = () => {
+const resetScore = () => {
+  playerScore = 0;
+  computerScore = 0;
+};
+
+const game = (rounds) => {
+  parseInt(rounds);
+  for (let i = 0; i < rounds; ) {
+    playRound();
+    console.log(`Player: ${playerScore}\nComputer: ${computerScore}`);
+    i++;
+  }
+
+  if (computerScore > playerScore) return "Computer won the game";
   
-}
+  if (computerScore == playerScore) return "Even";
+  
+  return "Player won the game";
+};
