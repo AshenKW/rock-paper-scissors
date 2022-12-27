@@ -1,5 +1,7 @@
 let playerScore = 0;
 let computerScore = 0;
+let computerChoice = "";
+let playerChoice = "";
 const choices = ["rock", "paper", "scissors"];
 
 const getRandomNumber = (max) => {
@@ -19,8 +21,8 @@ const getPlayerChoice = () => {
 };
 
 const playRound = () => {
-  const playerChoice = getPlayerChoice();
-  const computerChoice = getComputerChoice();
+  computerChoice = getComputerChoice();
+  playerChoice = getPlayerChoice();
   const beatsTo = {
     rock: "scissors",
     paper: "rock",
@@ -30,11 +32,11 @@ const playRound = () => {
   if (playerChoice === computerChoice) return "Tie";
 
   if (beatsTo[playerChoice] === computerChoice) {
-    playerScore++
-    return "You won the round"
-  };
-  computerScore++
-  return "Computer won the round"
+    playerScore++;
+    return "You won the round";
+  }
+  computerScore++;
+  return "Computer won the round";
 };
 
 const resetScore = () => {
@@ -46,19 +48,21 @@ const game = (rounds = 5) => {
   parseInt(rounds);
   for (let i = 0; i < rounds; ) {
     playRound();
-    console.log(`Player used ${playerChoice} Score: ${playerScore}\nComputer used: ${computerChoice} Score: ${computerScore}`);
+    console.log(
+      `Player used ${playerChoice} Score: ${playerScore}\nComputer used ${computerChoice} Score: ${computerScore}`
+    );
     i++;
   }
 
   if (computerScore > playerScore) {
-    resetScore()
+    resetScore();
     return "Computer won the game";
   }
-  
+
   if (computerScore == playerScore) {
-    resetScore()
+    resetScore();
     return "Tie";
   }
-  resetScore()
+  resetScore();
   return "Player won the game";
 };
