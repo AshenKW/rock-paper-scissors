@@ -27,7 +27,7 @@ const playRound = () => {
     scissors: "paper",
   };
 
-  if (playerChoice === computerChoice) return "even";
+  if (playerChoice === computerChoice) return "Tie";
 
   if (beatsTo[playerChoice] === computerChoice) {
     playerScore++
@@ -50,9 +50,15 @@ const game = (rounds) => {
     i++;
   }
 
-  if (computerScore > playerScore) return "Computer won the game";
+  if (computerScore > playerScore) {
+    resetScore()
+    return "Computer won the game";
+  }
   
-  if (computerScore == playerScore) return "Even";
-  
+  if (computerScore == playerScore) {
+    resetScore()
+    return "Tie";
+  }
+  resetScore()
   return "Player won the game";
 };
