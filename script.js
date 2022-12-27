@@ -42,11 +42,11 @@ const resetScore = () => {
   computerScore = 0;
 };
 
-const game = (rounds) => {
+const game = (rounds = 5) => {
   parseInt(rounds);
   for (let i = 0; i < rounds; ) {
     playRound();
-    console.log(`Player: ${playerScore}\nComputer: ${computerScore}`);
+    console.log(`Player used ${playerChoice} Score: ${playerScore}\nComputer used: ${computerChoice} Score: ${computerScore}`);
     i++;
   }
 
