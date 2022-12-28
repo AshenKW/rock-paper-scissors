@@ -2,6 +2,7 @@ let playerScore = 0;
 let computerScore = 0;
 let computerChoice = "";
 let playerChoice = "";
+const playerInput = document.querySelectorAll("input[name=choice]")
 const choices = ["rock", "paper", "scissors"];
 
 const getRandomNumber = (max) => {
@@ -20,9 +21,9 @@ const getPlayerChoice = () => {
   }
 };
 
-const playRound = () => {
+const playRound = (playerChoice) => {
   computerChoice = getComputerChoice();
-  playerChoice = getPlayerChoice();
+  
   const beatsTo = {
     rock: "scissors",
     paper: "rock",
@@ -66,3 +67,10 @@ const game = (rounds = 5) => {
   resetScore();
   return "Player won the game";
 };
+
+for (const input of playerInput) {
+  input.addEventListener("click", (e) => {
+    const choice = e.target.id
+    console.log(playRound(choice))
+  })
+}
