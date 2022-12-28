@@ -1,0 +1,19 @@
+input[type=radio] {
+  display: none;
+}
+
+label > img {
+height: 45px;
+width: 45px;
+}
+
+.scoreboard {
+  display:flex;
+  gap: 20px;
+}
+
+.player-score,
+.computer-score {
+  display: flex;
+  flex-direction: column;
+}
