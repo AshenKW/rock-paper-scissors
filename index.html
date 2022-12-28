@@ -4,13 +4,33 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Rock, Paper, Scissors</title>
 </head>
 <body>
 
-  <h1>ROCK PAPER SCISSORS</h1>
-  <p>To play press<code>CTRL + SHIFT + C</code> on Windows and <code>CMD + SHIFT + C</code> on Mac</p>
-  <p>Type <code>game()</code> to start</p>
+  <div class="container">
+    <h1>ROCK PAPER SCISSORS</h1>
+    <p>Make your choice!</p>
+    <div class="scoreboard">
+      <div class="score">
+        <p>Player</p>
+        <span class="player-score">0</span>
+      </div>
+      <div class="score">
+        <p>Computer</p>
+        <span class="computer-score">0</span>
+      </div>
+    </div>
+    <form action="">
+      <input type="radio" name="choice" id="rock">
+      <label for="rock"><img src="img/clenched.svg" alt=""></label>
+      <input type="radio" name="choice" id="paper">
+      <label for="paper"><img src="img/fronthand.svg" alt=""></label>
+      <input type="radio" name="choice" id="scissors">
+      <label for="scissors"><img src="img/hand.svg" alt=""></label>
+    </form>
+  </div>
 
   <script src="script.js"></script>
 </body>
