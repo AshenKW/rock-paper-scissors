@@ -1,19 +1,53 @@
-input[type=radio] {
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+input[type="radio"] {
   display: none;
 }
 
-label > img {
-height: 45px;
-width: 45px;
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  text-align: center;
 }
 
 .scoreboard {
-  display:flex;
-  gap: 20px;
+  display: flex;
+  justify-content: space-around;
 }
 
-.player-score,
-.computer-score {
+.score {
   display: flex;
   flex-direction: column;
+  text-align: center;
+}
+
+.choices {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+label {
+  background-color: rgb(37, 32, 32);
+  padding: 20px;
+  border-radius: 10%;
+}
+
+.icon {
+  height: 50px;
+  width: 50px;
+  color: #F8F8F8;
+}
+
+.icon:hover {
+  color:blue;
 }
