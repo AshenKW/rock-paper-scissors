@@ -27,9 +27,9 @@ const playRound = (playerSelect) => {
     scissors: "paper",
   };
 
-  if (playerSelection === computerSelection) return "Tie";
+  if (playerSelect === computerSelection) return "Tie";
 
-  if (beatsTo[playerSelection] === computerSelection) {
+  if (beatsTo[playerSelect] === computerSelection) {
     playerScore++;
     printPlayerScore.textContent = playerScore
     return "You won the round 🥁";
