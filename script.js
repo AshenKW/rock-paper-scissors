@@ -19,7 +19,7 @@ const getComputerSelection = () => {
 };
 
 const playRound = (playerSelect) => {
-  computerSelection = getComputerChoice();
+  computerSelection = getComputerSelection();
   
   const beatsTo = {
     rock: "scissors",
