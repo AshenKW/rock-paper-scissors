@@ -1,7 +1,7 @@
 let playerScore = 0;
 let computerScore = 0;
-let computerChoice = "";
-let playerChoice = "";
+let computerSelection = "";
+let playerSelection = "";
 let doGameEnd = false;
 
 const winnerText = document.querySelector(".winner")
@@ -14,20 +14,13 @@ const getRandomNumber = (max) => {
   return Math.floor(Math.random(0) * max);
 };
 
-const getComputerChoice = () => {
+const getComputerSelection = () => {
   return choices[getRandomNumber(3)];
 };
 
-const getPlayerChoice = () => {
-  while (true) {
-    const playerChoice = prompt("Make a choice").toLowerCase();
-    if (choices.includes(playerChoice)) return playerChoice;
-    alert(`${playerChoice} is not a valid choice`);
-  }
-};
 
-const playRound = (playerChoice) => {
-  computerChoice = getComputerChoice();
+const playRound = (playerSelect) => {
+  computerSelection = getComputerChoice();
   
   const beatsTo = {
     rock: "scissors",
