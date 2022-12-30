@@ -18,7 +18,6 @@ const getComputerSelection = () => {
   return choices[getRandomNumber(3)];
 };
 
-
 const playRound = (playerSelect) => {
   computerSelection = getComputerChoice();
   
@@ -28,9 +27,9 @@ const playRound = (playerSelect) => {
     scissors: "paper",
   };
 
-  if (playerChoice === computerChoice) return "Tie";
+  if (playerSelection === computerSelection) return "Tie";
 
-  if (beatsTo[playerChoice] === computerChoice) {
+  if (beatsTo[playerSelection] === computerSelection) {
     playerScore++;
     printPlayerScore.textContent = playerScore
     return "You won the round 🥁";
@@ -50,11 +49,11 @@ const resetScore = () => {
 
 for (const input of playerInput) {
   input.addEventListener("click", (e) => {
-    const choice = e.target.id
+    const selection = e.target.id
     
     if (doGameEnd) {resetScore()} 
 
-    winnerText.textContent = playRound(choice)
+    winnerText.textContent = playRound(selection)
     
     if (playerScore === 5 || computerScore === 5) {
       const winner = playerScore === 5 ? "Player won the <strong>game</strong> 🥁" : "Computer won the game 🤖";
