@@ -51,7 +51,10 @@ for (const input of playerInput) {
   input.addEventListener("click", (e) => {
     const selection = e.target.id
     
-    if (doGameEnd) {resetScore()} 
+    if (doGameEnd) {
+      resetScore()
+      doGameEnd = false
+    } 
 
     winnerText.textContent = playRound(selection)
     
